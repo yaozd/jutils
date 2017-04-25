@@ -23,13 +23,17 @@ public class ExceptionUtils {
     }
 
     public static String getErrorInfoFromException(Exception e) {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
         try {
-            StringWriter sw = new StringWriter();
-            PrintWriter pw = new PrintWriter(sw);
             e.printStackTrace(pw);
             return "\r\n" + sw.toString() + "\r\n";
         } catch (Exception e2) {
             return "bad getErrorInfoFromException";
+        } finally {
+            if (pw != null) {
+                pw.close();
+            }
         }
     }
 }
