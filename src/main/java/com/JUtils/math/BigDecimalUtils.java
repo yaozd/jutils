@@ -1,12 +1,12 @@
 package com.JUtils.math;
 
-import java.math.BigDecimal;
-
 import com.JUtils.base.ValidateHelper;
+
+import java.math.BigDecimal;
 
 /**
  * 提供精确的加减乘除运算
- *
+ * 建议使用BigDecimalUtil2-byArvin
  * @Author:chenssy
  * @date:2014年9月15日
  */
