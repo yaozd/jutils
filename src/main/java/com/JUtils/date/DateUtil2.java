@@ -7,11 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @desc:时间处理工具类
- * @Author:chenssy
- * @date:2014年8月4日
+ * Created by zd.yao on 2017/4/26.
  */
-public class DateUtils {
+public class DateUtil2 {
     private static final String[] weeks = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
 
     /**
@@ -609,12 +607,12 @@ public class DateUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        while (!c1.after(c2)) {                   // 循环对比，直到相等，n 就是所要的结果     
+        while (!c1.after(c2)) {                   // 循环对比，直到相等，n 就是所要的结果
             n++;
             if (stype == 1) {
-                c1.add(Calendar.MONTH, 1);          // 比较月份，月份+1     
+                c1.add(Calendar.MONTH, 1);          // 比较月份，月份+1
             } else {
-                c1.add(Calendar.DATE, 1);           // 比较天数，日期+1     
+                c1.add(Calendar.DATE, 1);           // 比较天数，日期+1
             }
         }
         n = n - 1;
@@ -712,7 +710,7 @@ public class DateUtils {
      * @date : 2016年5月31日 下午5:32:09
      */
     public static String getMonthLastDate(String date) {
-        Date strDate = DateUtils.string2Date(getMonthFirstDate(date));
+        Date strDate = DateUtil2.string2Date(getMonthFirstDate(date));
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(strDate);
         calendar.add(Calendar.MONTH, 1);
@@ -755,10 +753,5 @@ public class DateUtils {
         int last_day_of_week = first_day_of_week + 6; // 星期日
         now.set(now.DATE, last_day_of_week);
         return now.getTime();
-    }
-    public static void main(String[] args) {
-        Date now= DateUtils.getCurrentDate();
-        String v1= DateFormatUtils.formatDate(now, DateFormatUtils.TIME_NOFUll_FORMAT);
-        System.out.println(v1);
     }
 }

@@ -5,10 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 日期格式化工具类
- *
- * @Author:chenssy
- * @date:2016年5月26日 下午12:39:57
+ * Created by zd.yao on 2017/4/26.
  */
 public class DateFormatUtils {
     /**
@@ -164,7 +161,7 @@ public class DateFormatUtils {
      * @date:2014年8月6日
      */
     public static String formatDate(String value) {
-        return getFormat(DATE_FORMAT2).format(DateUtils.string2Date(value, DATE_FORMAT2));
+        return getFormat(DATE_FORMAT2).format(DateUtil2.string2Date(value, DATE_FORMAT2));
     }
 
     /**
@@ -176,7 +173,7 @@ public class DateFormatUtils {
      * @date : 2016年5月31日 下午5:40:58
      */
     public static String formatDate(Date value) {
-        return formatDate(DateUtils.date2String(value));
+        return formatDate(DateUtil2.date2String(value));
     }
 
     /**
