@@ -756,4 +756,9 @@ public class DateUtils {
         now.set(now.DATE, last_day_of_week);
         return now.getTime();
     }
+    public static void main(String[] args) {
+        Date now= DateUtils.getCurrentDate();
+        String v1= DateFormatUtils.formatDate(now, DateFormatUtils.TIME_NOFUll_FORMAT);
+        System.out.println(v1);
+    }
 }
